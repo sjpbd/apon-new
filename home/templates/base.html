@@ -1,0 +1,270 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="APON official website" />
+    <meta name="author" content="APON" />
+
+    <title>APON | {% block title %}Home{% endblock %}</title>
+
+    <!-- Add favicon link here -->
+    <!-- <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" /> -->
+
+    <!-- Flowbite CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!-- Extra CSS -->
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      main {
+        flex-grow: 1;
+      }
+
+      footer {
+        width: 100%;
+        background-color: #fff;
+      }
+      .contact-info {
+  display: flex;
+  flex-direction: column; /* Stack the instruction above the numbers */
+  align-items: flex-start; /* Align to the left */
+}
+
+.contact-numbers a {
+  opacity: 0.8; /* Slightly transparent by default */
+  transition: opacity 0.3s ease;
+}
+
+.contact-numbers a:hover {
+  opacity: 1; /* Fully opaque on hover */
+}
+
+.welcome-message-container {
+  position: relative;
+  width: 100%; /* Full width to allow scrolling */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.welcome-message {
+  white-space: nowrap; /* Prevent line breaks */
+  animation: scroll 15s linear infinite; /* Control duration and effect */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* Start from right outside the view */
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll to the left outside the view */
+  }
+}
+.contact-numbers {
+  display: flex;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+}
+@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 0.85rem; /* Smaller font size for mobile */
+    white-space: normal; /* Allow wrapping on mobile */
+  }
+
+  .contact-numbers a {
+    font-size: 0.9rem; /* Slightly smaller font for contact numbers */
+    padding: 0.5rem; /* Add some padding for better tap targets */
+    border-radius: 0.25rem; /* Rounded corners for buttons */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for contrast */
+  }
+}
+
+
+
+    </style>
+
+    {% block extra_css %}{% endblock %}
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Topbar -->
+<div class="bg-blue-800 text-white">
+  <div class="container mx-auto flex flex-wrap justify-between items-center py-2 px-4">
+    <!-- Welcome Message -->
+    <div class="welcome-message-container overflow-hidden whitespace-nowrap flex-1">
+      <div class="welcome-message text-sm font-semibold inline-block animate-scroll">
+        <span class="text-yellow-400 mr-2">Welcome to APON's official website. Contact us for any queries or assistance regarding our rehabilitation programs.</span>
+      </div>
+    </div>
+    
+    <!-- Contact Numbers -->
+    <div class="flex items-center space-x-4 flex-shrink-0 mt-2">
+      <span class="material-icons mr-1">phone</span>
+      <div class="contact-info flex items-center space-x-2">
+        <div class="contact-numbers flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-2">
+          <a href="tel:+880123456789" class="text-white hover:text-yellow-400 font-semibold transition duration-300">+880 1234 56789</a>
+          <a href="tel:+880987654321" class="text-white hover:text-yellow-400 font-semibold transition duration-300">+880 9876 54321</a>
+          <a href="tel:+880111122222" class="text-white hover:text-yellow-400 font-semibold transition duration-300">+880 1111 22222</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <header>
+          
+        <nav class="bg-blue-600 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="flex items-center">
+            <img src="{% static 'images/apon_logo1.png' %}" alt="Logo" class="h-16 mr-2">
+            <span class="text-white text-2xl font-bold">APON</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+            <a href="{% url 'home:home' %}" class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded transition duration-300">Home</a>
+            <a href="{% url 'home:about_us_detail' %}" class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded transition duration-300">About Us</a>
+            <a href="{% url 'home:team' %}" class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded transition duration-300">Core Team</a>
+            <a href="{% url 'home:services_list' %}" class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded transition duration-300">Services</a>
+            <a href="{% url 'home:program' %}" class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded transition duration-300">Program</a>
+            <a href="#" class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded transition duration-300">Gallery</a>
+            <a href="{% url 'home:treatment' %}" class="bg-green-400 text-blue-800 font-semibold px-4 py-2 rounded ml-4 hover:bg-green-500 transition duration-300">Treatment</a>
+            <a href="{% url 'home:contact' %}" class="bg-yellow-400 text-blue-800 font-semibold px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Contact Us</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (Shutter from the left) -->
+<div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-blue-700 text-white p-4 transform -translate-x-full transition-transform duration-300 ease-in-out z-50">    <!-- Logo and Close Button -->
+    <div class="flex justify-between items-center mb-4">
+        <a href="#" class="flex items-center hover:text-gray-300">
+            <img src="{% static 'images/apon_logo1.png' %}" alt="Logo" class="h-16 mr-2 transition-transform duration-200 transform hover:scale-105">
+            <span class="text-2xl font-bold">APON</span>
+        </a>
+        <button id="close-menu-btn" class="focus:outline-none text-white hover:text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu Links (with hover and animation effects) -->
+    <nav class="space-y-4">
+    <a href="{% url 'home:home' %}" class="nav-link block py-2 transition-colors duration-200 ease-in-out hover:bg-blue-800 hover:text-gray-300 rounded-lg">Home</a>
+    <a href="{% url 'home:about_us_detail' %}" class="nav-link block py-2 transition-colors duration-200 ease-in-out hover:bg-blue-800 hover:text-gray-300 rounded-lg">About Us</a>
+    <a href="{% url 'home:team' %}" class="nav-link block py-2 transition-colors duration-200 ease-in-out hover:bg-blue-800 hover:text-gray-300 rounded-lg">Core Team</a>
+    <a href="{% url 'home:treatment' %}" class="nav-link block py-2 transition-colors duration-200 ease-in-out hover:bg-blue-800 hover:text-gray-300 rounded-lg">Treatment</a>
+    <a href="{% url 'home:program' %}" class="nav-link block py-2 transition-colors duration-200 ease-in-out hover:bg-blue-800 hover:text-gray-300 rounded-lg">Program</a>
+    <a href="#" class="nav-link block py-2 transition-colors duration-200 ease-in-out hover:bg-blue-800 hover:text-gray-300 rounded-lg">Gallery</a>
+    <a href="{% url 'home:contact' %}" class="nav-link block py-2 transition-colors duration-200 ease-in-out hover:bg-blue-800 hover:text-gray-300 rounded-lg">Contact</a>
+</nav>
+</div>
+
+</nav>
+
+
+      </header>
+
+      <main>
+        {% block content %} {% endblock %}
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white dark:bg-gray-900">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+          <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+              <a href="https://flowbite.com/" class="flex items-center">
+                <img src="{% static 'images/apon_logo1.png' %}" class="h-16 me-3" alt="Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Ashokti Punorbashon Nibash</span>
+              </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                  <li class="mb-4">
+                    <a href="https://flowbite.com/" class="hover:underline">Newsletter</a>
+                  </li>
+                  <li>
+                    <a href="https://tailwindcss.com/" class="hover:underline">Photos</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                  <li class="mb-4">
+                    <a href="https://github.com/themesberg/flowbite" class="hover:underline">Facebook</a>
+                  </li>
+                  <li>
+                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">YouTube</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                  <li class="mb-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">APON</a>. All Rights Reserved.</span>
+        </div>
+      </footer>
+    </div>
+    <script>
+    // Get the elements
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Open the mobile menu
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('-translate-x-full');
+    });
+
+    // Close the mobile menu
+    closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('-translate-x-full');
+    });
+</script>
+
+
+
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>

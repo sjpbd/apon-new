@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+
+<!-- about_detail.html -->
+<div class="bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Sidebar for navigation -->
+      <aside class="lg:w-1/6">
+        <div class="sticky top-4">
+          <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
+            <!-- <h5 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Navigation</h5> -->
+            <ul class="space-y-3">
+              <li>
+                <a href="#apon" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <span class="ml-3">APON</span>
+                </a>
+              </li>
+              <li>
+                <a href="#infrastructure" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <span class="ml-3">Infrastructure</span>
+                </a>
+              </li>
+              <li>
+                <a href="#membership" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <span class="ml-3">Membership & Affiliation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#awards" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <span class="ml-3">Awards</span>
+                </a>
+              </li>
+              <li>
+                <a href="#goal" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <span class="ml-3">Goal</span>
+                </a>
+              </li>
+              <li>
+                <a href="#objectives" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <span class="ml-3">Objectives</span>
+                </a>
+              </li>
+              <li>
+                <a href="#activities" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <span class="ml-3">Activities</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <div class="w-full lg:w-4/5 space-y-8">
+        <!-- APON Section -->
+        <section id="apon" class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <h2 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white">APON (Addiction Rehabilitation Residence)</h2>
+          <p class="mb-4 text-gray-500 dark:text-gray-400">
+            {{ about_us.apon_description|safe }}
+          </p>
+        </section>
+
+        <!-- Infrastructure of APON Section -->
+        <section id="infrastructure" class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <h2 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white">Infrastructure of APON</h2>
+          <p class="mb-4 text-gray-500 dark:text-gray-400">
+            {{ about_us.infrastructure|safe }}
+          </p>
+        </section>
+
+        <!-- Membership and Affiliation Section -->
+        <section id="membership" class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <h2 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white">Membership and Affiliation</h2>
+          <p class="mb-4 text-gray-500 dark:text-gray-400">
+            {{ about_us.membership_affiliation|safe }}
+          </p>
+        </section>
+
+        <!-- Award Received Section -->
+        <section id="awards" class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <h2 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white">Award Received</h2>
+          <p class="mb-4 text-gray-500 dark:text-gray-400">
+            {{ about_us.awards|safe }}
+          </p>
+        </section>
+
+        <!-- Goal Section -->
+        <section id="goal" class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <h2 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white">Goal</h2>
+          <p class="mb-4 text-gray-500 dark:text-gray-400">
+            {{ about_us.goal|safe }}
+          </p>
+        </section>
+
+        <!-- Objectives of APON Section -->
+        <section id="objectives" class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <h2 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white">Objectives of APON</h2>
+          <p class="mb-4 text-gray-500 dark:text-gray-400">
+            {{ about_us.objectives|safe }}
+          </p>
+        </section>
+
+        <!-- Program Activities Section -->
+        <section id="activities" class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <h2 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white">Program Activities</h2>
+          <p class="mb-4 text-gray-500 dark:text-gray-400">
+            {{ about_us.program_activities|safe }}
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

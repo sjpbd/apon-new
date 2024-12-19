@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% include 'home/slideshow.html' %}
+    {% include 'home/about.html' %}
+    {% include 'home/services_list.html' %}
+    {% include 'home/facts.html' %}
+    {% include 'home/news_list.html' %}
+    {% include 'home/faq.html' %}
+{% endblock %}
+
+

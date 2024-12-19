@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - APON Rehabilitation Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for modal backdrop */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Services Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-extrabold text-center mb-12 text-blue-600">Our Services</h1>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Service 1 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{% static 'images/individual_therapy.jpg' %}" alt="Individual Therapy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Individual Therapy</h2>
+                        <p class="text-gray-600 mb-4">One-on-one sessions with a trained therapist to address personal challenges and recovery goals.</p>
+                        <button data-modal="modal1" class="open-modal bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{% static 'images/group-therapy.jpg' %}" alt="Group Therapy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Group Therapy</h2>
+                        <p class="text-gray-600 mb-4">Participate in group sessions to share experiences and gain support from peers facing similar challenges.</p>
+                        <button data-modal="modal2" class="open-modal bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{% static 'images/Psychological-Support.jpg' %}" alt="Vocational Training" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Vocational Training</h2>
+                        <p class="text-gray-600 mb-4">Skill-building programs to help individuals gain the qualifications and experience needed for employment.</p>
+                        <button data-modal="modal3" class="open-modal bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{% static 'images/Psychological-Support.jpg' %}" alt="Psychological Support" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Psychological Support</h2>
+                        <p class="text-gray-600 mb-4">Ongoing support from mental health professionals to help manage mental health conditions and emotional well-being.</p>
+                        <button data-modal="modal4" class="open-modal bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="modal-backdrop fixed inset-0"></div>
+        <div class="modal-content bg-white p-6 rounded-lg shadow-lg relative z-10 w-11/12 md:w-1/2">
+            <button class="close-modal absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 class="text-2xl font-bold mb-4">Individual Therapy</h2>
+            <p class="text-gray-700 mb-4">Detailed information about Individual Therapy. This includes a comprehensive overview of the therapy process, benefits, and how it helps in personal recovery and growth.</p>
+            <img src="{% static 'images/individual_therapy.jpg' %}" alt="Individual Therapy" class="w-full h-48 object-cover mb-4">
+            <p class="text-gray-700">Further details on the techniques used, the typical duration of sessions, and testimonials from individuals who have benefited from this service.</p>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="modal-backdrop fixed inset-0"></div>
+        <div class="modal-content bg-white p-6 rounded-lg shadow-lg relative z-10 w-11/12 md:w-1/2">
+            <button class="close-modal absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 class="text-2xl font-bold mb-4">Group Therapy</h2>
+            <p class="text-gray-700 mb-4">Detailed information about Group Therapy. This includes an overview of the session structure, group dynamics, and how it fosters support and healing among participants.</p>
+            <img src="{% static 'images/group-therapy.jpg' %}" alt="Group Therapy" class="w-full h-48 object-cover mb-4">
+            <p class="text-gray-700">Information on the variety of groups available, the qualifications of group facilitators, and feedback from past participants.</p>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="modal-backdrop fixed inset-0"></div>
+        <div class="modal-content bg-white p-6 rounded-lg shadow-lg relative z-10 w-11/12 md:w-1/2">
+            <button class="close-modal absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 class="text-2xl font-bold mb-4">Vocational Training</h2>
+            <p class="text-gray-700 mb-4">Detailed information about Vocational Training. This includes the types of skills taught, how training is structured, and the impact on employability and personal growth.</p>
+            <img src="{% static 'images/Psychological-Support.jpg' %}" alt="Vocational Training" class="w-full h-48 object-cover mb-4">
+            <p class="text-gray-700">Information on job placement assistance, success stories, and partnerships with local businesses and organizations.</p>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="modal-backdrop fixed inset-0"></div>
+        <div class="modal-content bg-white p-6 rounded-lg shadow-lg relative z-10 w-11/12 md:w-1/2">
+            <button class="close-modal absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 class="text-2xl font-bold mb-4">Psychological Support</h2>
+            <p class="text-gray-700 mb-4">Detailed information about Psychological Support. This includes the range of psychological services offered, the approach taken by professionals, and the support available to individuals.</p>
+            <img src="{% static 'images/Psychological-Support.jpg' %}" alt="Psychological Support" class="w-full h-48 object-cover mb-4">
+            <p class="text-gray-700">Additional details on the types of psychological assessments available, ongoing support, and success stories from individuals who have received support.</p>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        document.querySelectorAll('.open-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal');
+                document.getElementById(modalId).classList.remove('hidden');
+            });
+        });
+
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.modal').classList.add('hidden');
+            });
+        });
+
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+            backdrop.addEventListener('click', () => {
+                backdrop.closest('.modal').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

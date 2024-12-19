@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehabilitation Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/aspect-ratio"></script>
+</head>
+<body class="bg-gray-100">
+
+
+    <!-- Admission Process Section -->
+    <section class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold text-center mb-6">Admission Process</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Pre-Admission -->
+            <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.38.59-2.63 1.54-3.54A5.005 5.005 0 0012 4a5 5 0 100 10c1.54 0 2.94-.5 4.06-1.34A3.49 3.49 0 0117 11H5a3 3 0 00-.83 5.83A7.03 7.03 0 0112 20c4.42 0 8-3.58 8-8 0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">Pre-Admission</h3>
+                </div>
+                <p>Before admitting a Client, our Internationally Certified addiction professionals counsel with Client’s parents/guardians.</p>
+                <button onclick="openModal('preAdmissionModal')" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+            </div>
+
+            <!-- Rescue -->
+            <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13l4 4L13 7m6 5a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">Rescue</h3>
+                </div>
+                <p>On request of guardian/parents and after payment of set rescue fee, our expert team members rescue clients from residence.</p>
+                <button onclick="openModal('rescueModal')" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+            </div>
+
+            <!-- After Admission -->
+            <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.656 0 3 1.344 3 3 0 1.656-1.344 3-3 3s-3-1.344-3-3c0-1.656 1.344-3 3-3zm4-3h4a2 2 0 012 2v4M4 4h4M2 20h6a2 2 0 012 2v2H4a2 2 0 01-2-2v-4zM12 12c-2.21 0-4 1.79-4 4v6h8v-6c0-2.21-1.79-4-4-4z"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">After Admission</h3>
+                </div>
+                <p>Post admission involves physical, emotional interview, and psychological assessment, along with various medical tests.</p>
+                <button onclick="openModal('afterAdmissionModal')" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Method Section -->
+    <section class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold text-center mb-6">Treatment Method</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Detoxification -->
+            <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7M4 8h4m-4 4h4m2-6h6m0 0h6m-6 4h6"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">Detoxification</h3>
+                </div>
+                <p>We isolate a new client for 15-21 days during the detoxification process, which is done under professional supervision.</p>
+                <button onclick="openModal('detoxificationModal')" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Read More</button>
+            </div>
+
+            <!-- Drug History of Patient -->
+            <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">Drug History</h3>
+                </div>
+                <p>From the beginning, our staff conducts motivational discussions with patients to collect their drug history.</p>
+                <button onclick="openModal('drugHistoryModal')" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Read More</button>
+            </div>
+
+            <!-- Treatment and Rehabilitation Activities -->
+            <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 4h2a2 2 0 002-2v-3a2 2 0 00-2-2h-1m-2-4h.01"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">Rehabilitation Activities</h3>
+                </div>
+                <p>Our treatment includes medical check-ups, community therapy, education, skill development, spiritual growth, and more.</p>
+                <button onclick="openModal('rehabActivitiesModal')" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Read More -->
+    <!-- Pre-Admission Modal -->
+    <div id="preAdmissionModal" class="fixed z-50 inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+            <h3 class="text-xl font-bold mb-4">Pre-Admission</h3>
+            <p>Detailed content about Pre-Admission goes here...</p>
+            <button onclick="closeModal('preAdmissionModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+    
+    <!-- Rescue Modal -->
+    <div id="rescueModal" class="fixed z-50 inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+            <h3 class="text-xl font-bold mb-4">Rescue</h3>
+            <p>Detailed content about Rescue goes here...</p>
+            <button onclick="closeModal('rescueModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+    
+    <!-- After Admission Modal -->
+    <div id="afterAdmissionModal" class="fixed z-50 inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+            <h3 class="text-xl font-bold mb-4">After Admission</h3>
+            <p>Detailed content about After Admission goes here...</p>
+            <button onclick="closeModal('afterAdmissionModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+    <!-- Detoxification Modal -->
+    <div id="detoxificationModal" class="fixed z-50 inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+            <h3 class="text-xl font-bold mb-4">Detoxification</h3>
+            <p>Detoxification is conducted under professional supervision. Isolation is maintained for about 15-21 days to ensure safety.</p>
+            <button onclick="closeModal('detoxificationModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+    <!-- Drug History Modal -->
+    <div id="drugHistoryModal" class="fixed z-50 inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+            <h3 class="text-xl font-bold mb-4">Drug History</h3>
+            <p>Our experienced staff starts motivational discussions with patients from the start and collects their drug history.</p>
+            <button onclick="closeModal('drugHistoryModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+    <!-- Rehab Activities Modal -->
+    <div id="rehabActivitiesModal" class="fixed z-50 inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+            <h3 class="text-xl font-bold mb-4">Rehabilitation Activities</h3>
+            <p>Rehabilitation includes medical check-ups, community therapy, education, skill development, spiritual growth, and more.</p>
+            <button onclick="closeModal('rehabActivitiesModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts for Modal Functionality -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
+{% endblock %}

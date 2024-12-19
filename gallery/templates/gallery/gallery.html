@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<!-- Add Splide CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<style>
+    .splide {
+        margin: 3rem auto;
+        max-width: 1400px;
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .splide__slide {
+        transform: scale(0.9);
+        transition: all 0.4s ease;
+        opacity: 0.8;
+        position: relative;
+    }
+    
+    .splide__slide.is-active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    .splide__slide img {
+        max-width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        transition: all 0.4s ease;
+    }
+    
+    .splide__slide.is-active img {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    
+    .slide-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 3rem 1.5rem 1.5rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        transition: all 0.4s ease;
+    }
+    
+    .slide-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin: 0;
+        text-align: center;
+        letter-spacing: 0.5px;
+        transform: translateY(0);
+        transition: transform 0.4s ease;
+    }
+    
+    .slide-description {
+        display: none;  /* Hide description */
+    }
+    
+    .splide__slide:hover .slide-title {
+        transform: translateY(-5px);
+    }
+    
+    .splide__arrow {
+        background: white;
+        width: 3rem;
+        height: 3rem;
+        opacity: 0.9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .splide__arrow:hover {
+        background: #f1f2f6;
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    
+    .splide__pagination {
+        bottom: -2.5rem;
+    }
+    
+    .splide__pagination__page {
+        background: #cbd5e0;
+        transition: all 0.3s ease;
+        margin: 0 6px;
+    }
+    
+    .splide__pagination__page.is-active {
+        background: #4a90e2;
+        transform: scale(1.4);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="splide" role="group">
+    <div class="splide__track">
+        <ul class="splide__list">
+            {% for photo in photos %}
+            <li class="splide__slide">
+                <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                <div class="slide-content">
+                    <h3 class="slide-title">{{ photo.title }}</h3>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Add Splide JS -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        new Splide('.splide', {
+            type: 'loop',
+            perPage: 3,
+            perMove: 1,
+            gap: '2rem',
+            pagination: true,
+            arrows: true,
+            speed: 1000,
+            easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+            breakpoints: {
+                992: {
+                    perPage: 2,
+                },
+                768: {
+                    perPage: 1,
+                }
+            },
+            autoplay: true,
+            interval: 4000,
+            pauseOnHover: true,
+            focus: 'center',
+            updateOnMove: true,
+        }).mount();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+<div class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4">
+    <h1 class="text-center text-4xl font-extrabold text-gray-800 mb-12">Facts and Figures</h1>
+    
+    <div class="grid gap-8 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+      {% for fact in facts %}
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-transform duration-300">
+        <div class="flex items-center mb-4">
+          <i class="material-icons text-blue-600 text-6xl mr-4">{{ fact.icon }}</i>
+          <div>
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-2">{{ fact.number }}</h2>
+            <p class="text-gray-600">{{ fact.label }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

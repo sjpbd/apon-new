@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Process</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/aspect-ratio"></script>
+</head>
+<body class="bg-gray-100">
+
+    
+
+    <!-- Admission Process Section -->
+    <section class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold text-center mb-6">Admission Process</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Pre-Admission -->
+            <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.38.59-2.63 1.54-3.54A5.005 5.005 0 0012 4a5 5 0 100 10c1.54 0 2.94-.5 4.06-1.34A3.49 3.49 0 0117 11H5a3 3 0 00-.83 5.83A7.03 7.03 0 0112 20c4.42 0 8-3.58 8-8 0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">Pre-Admission</h3>
+                </div>
+                <p>Before admitting a Client, our Internationally Certified addiction professionals counsel with Client’s parents/guardians.</p>
+                <button onclick="openModal('preAdmissionModal')" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+            </div>
+
+            <!-- Rescue -->
+            <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13l4 4L13 7m6 5a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">Rescue</h3>
+                </div>
+                <p>On request of guardian/parents and after payment of set rescue fee, our expert team members rescue clients from residence.</p>
+                <button onclick="openModal('rescueModal')" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+            </div>
+
+            <!-- After Admission -->
+            <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.656 0 3 1.344 3 3 0 1.656-1.344 3-3 3s-3-1.344-3-3c0-1.656 1.344-3 3-3zm4-3h4a2 2 0 012 2v4M4 4h4M2 20h6a2 2 0 012 2v2H4a2 2 0 01-2-2v-4zM12 12c-2.21 0-4 1.79-4 4v6h8v-6c0-2.21-1.79-4-4-4z"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold">After Admission</h3>
+                </div>
+                <p>Post admission involves physical, emotional interview, and psychological assessment, along with various medical tests.</p>
+                <button onclick="openModal('afterAdmissionModal')" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="preAdmissionModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">Pre-Admission</h2>
+            <p>In this stage, our certified addiction professionals conduct counseling sessions with the client's parents or guardians to ensure they are well informed and prepared for the process.</p>
+            <button onclick="closeModal('preAdmissionModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+    <div id="rescueModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">Rescue</h2>
+            <p>Our expert team members are dispatched to safely rescue and collect clients from their residence upon request and after payment of the rescue fee.</p>
+            <button onclick="closeModal('rescueModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+    <div id="afterAdmissionModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">After Admission</h2>
+            <p>After admission, we conduct thorough physical, emotional, and psychological assessments, including tests such as Dope Test, ECG, X-ray, and COVID-19 Test.</p>
+            <button onclick="closeModal('afterAdmissionModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+    
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
